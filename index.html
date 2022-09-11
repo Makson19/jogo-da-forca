@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="./assets/logo2.svg" alt="logo da Alura">
+            </div>
+            <h1>Jogo da Forca</h1>
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="container">
+            <div class="controls">
+                <button type="button" class="btn-iniciar" onclick="startGame()">Iniciar Jogo</button>
+                <button type="button" class="btn-add-palavra" onclick="addNewWord()">Adicionar Palavra</button>
+            </div>
+
+            <div class="tabuleiro">
+                <div class="desenho">
+                    <canvas id="canvas" height="450"></canvas>
+                </div>
+                <div class="content">
+                    <div class="palavra"></div>
+    
+                    <div class="letras-erradas"></div>
+    
+                    <div class="field">
+                        <input type="text" id="input" placeholder="Digite aqui...">
+                        <button type="button" id="btn-chutar">Chutar</button>
+                    </div>
+
+                    <div class="buttons">
+                        <button type="button" onclick="startGame()">Novo Jogo</button>
+                        <button type="button" onclick="surrender()">Desistir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field-add-palavra">
+                <textarea id="palavra" placeholder="Digite uma palavra..."></textarea>
+                <div class="aviso">
+                    <img src="./assets/exclamation.svg" alt="">
+                    <p>Máx. de 8 letras.</p>
+                </div>
+                <div class="container-buttons">
+                    <button type="button" onclick="saveNewWord()">Salvar e começar</button>
+                    <button type="button" class="btn-cancel" onclick="cancel()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="modal-victory modal-content">
+                <h1>Parabéns!</h1>
+                <img src="./assets/champion-the-best.gif" alt="Gif da vitória">
+                <h2>Você venceu!</h2>
+                <div class="container-buttons">
+                    <button type="button" onclick="startGame()">Jogar novamente</button>
+                    <button type="button" onclick="surrender()">Voltar ao menu</button>
+                </div>
+            </div>
+
+            <div class="modal-defeat modal-content">
+                <h1>Você Perdeu!</h1>
+                <img src="./assets/derrota.gif" alt="Gif da derrota">
+                <h2></h2>
+                <h2>Mais sorte da próxima vez.</h2>
+                <div class="container-buttons">
+                    <button type="button" onclick="startGame()">Jogar novamente</button>
+                    <button type="button" onclick="surrender()">Voltar ao menu</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <p>© 2022 Makson Douglas</p>
+        <div class="socials">
+            <a href="https://github.com/Makson19" title="GitHub" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/maksondouglas" title="LinkedIn" target="_blank">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
